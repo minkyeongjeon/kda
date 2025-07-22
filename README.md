@@ -1,5 +1,7 @@
+# K/DA Project Page
 
-Project page
+[🔗 Project Page](https://minkyeongjeon.github.io/kda_projectpage/) for **K/DA**: Automated Data Generation Pipeline for Detoxifying Implicitly Offensive Language in Korean (ACL 2025)  
+
 
 ## Environment Setup
 ```
@@ -10,8 +12,8 @@ pip install -r requirements.txt
 ```
 
 ## Synthesizing implicit toxic dataset
-1. run `gen_toxic.ipynb`
-2. run `filtering.ipynb`
+1. Run `gen_toxic.ipynb` to generate candidate toxic samples.
+2. Run `filtering.ipynb` to filter for implicit hate expressions.
 
 ## GEval
 ```
@@ -19,10 +21,10 @@ cd kda
 python geval.py --dataset_path "./dataset/kda_en.csv" --dataset_name "kda" --metrics overall_toxicity implicit_toxicity context_preservation
 ```
 
-## Instruction Tuning
+### Instruction Tuning
 Although the prompt in this code is optimized for Korean, it can still serve as a template for detoxifying hate speech in other languages.
 
-### Training
+Training
 ```
 python ./instruction_tuning.py \
   --model_name "YOUR_MODEL_NAME" \
@@ -32,10 +34,10 @@ python ./instruction_tuning.py \
   --data_path "./dataset/kda_en.csv"
 ```
 
-### Inference
+Inference
 Detoxify using our instruction tuned model
 ```
-cd kda
+kda
 python ./inference.py \
   --model_name "saltlux/Ko-Llama3-Luxia-8B" \
   --checkpoint_path "jeeyoung/ours_sft_2e-4" \
@@ -54,3 +56,22 @@ python ./inference.py \
   --lang en \
   --name "infer_DATA_en"
 ```
+
+## 📁 Dataset & Insturction-tuned model
+Access the dataset and instruction-tuned model on [HuggingFace](https://huggingface.co/datasets/minkyeongjeon/kda-dataset)
+
+---
+
+## 📌 Citation
+```
+  <pre><code>@misc{jeon2025kdaautomateddatageneration,
+  title={K/DA: Automated Data Generation Pipeline for Detoxifying Implicitly Offensive Language in Korean}, 
+  author={Minkyeong Jeon and Hyemin Jeong and Yerang Kim and Jiyoung Kim and Jae Hyeon Cho and Byung-Jun Lee},
+  year={2025},
+  eprint={2506.13513},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2506.13513}
+```
+
+---
