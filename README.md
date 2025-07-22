@@ -2,7 +2,6 @@
 
 [🔗 Project Page](https://minkyeongjeon.github.io/kda_projectpage/) for **K/DA**: Automated Data Generation Pipeline for Detoxifying Implicitly Offensive Language in Korean (ACL 2025)  
 
-
 ## Environment Setup
 ```
 export OPENAI_API_KEY='YOUR API KEY'
@@ -58,6 +57,8 @@ python ./inference.py \
 ```
 
 ## 📁 Dataset & Insturction-tuned model
+❗️Please fill out [this form](https://forms.gle/WDECRuuH328jw93L6) before using K/DA dataset.
+
 Access the dataset and instruction-tuned model on [HuggingFace](https://huggingface.co/datasets/minkyeongjeon/kda-dataset)
 
 ---

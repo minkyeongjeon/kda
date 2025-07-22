@@ -1,7 +1,6 @@
 _filtering.py
 vectordb/
 scraped/
-dataset/
 wandb/
 outputs_text_running/
 outputs_text running/
